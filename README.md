@@ -7,9 +7,13 @@ Things to add to this repo!
 
 ## Team Members
 Damien McGeer 
+
 Anya Fletcher-Jones
+
 Toby Johnston
+
 Kishore Naha
+
 Louis Forster
 
 ## What is an interactive companion?
