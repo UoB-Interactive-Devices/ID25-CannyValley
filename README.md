@@ -1,4 +1,4 @@
-# ID25-TeamB
+# ID25-CannyValley
 
 Things to add to this repo!
 - A team photo
