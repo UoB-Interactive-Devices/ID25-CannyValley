@@ -14,6 +14,7 @@ Louis Forster
 ## What is an interactive companion?
 An interactive companion is a device which fosters a two-way relationship between itself and the user while supporting the user's needs. It serves an explicit purpose, and requires little effort for the user to insert into their everyday life. Interacting with an interactive companion should be intrinsically motivating. 
 
+
 ## Abstract
 With a consistent increase in the time spent online, young people have become increasingly withdrawn and isolated. With a series of social skills denied from them as a result of the prolonged pandemic, we have seen a rise in emotional dysregulation. In this paper, we present a new product concept, by which we attempt to provide a solution to these prominent psychological problems. Mimir is an electronic desktop companion, who aims to prepare young people for developing these new skills in the comfort of your own home. [[add results here]]
 
@@ -53,3 +54,27 @@ Galvanic Skin sensor (skin moisture)
 ## Personas
 
 The product aims to have 2 distinct personalities to distinguish between different levels of desired emotion.
+
+
+
+## Plans
+
+-clear hypothesis - e.g. finding a conclusion from the usage of LLMs with emotion regulation
+
+-project / report should be hypothesis-driven
+
+-gather primary data and user feedback e.g. from demonstration day
+
+-report is narrative of the whole process
+
+-performance data included, model selection.
+
+-operating costs of the models.
+
+
+-creating novel physical interactions with an LLM.
+
+-how we can create an interesting physical form.
+
+-something to stand out from the sea of existing research into LLMs
+
