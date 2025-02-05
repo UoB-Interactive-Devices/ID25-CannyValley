@@ -78,3 +78,5 @@ The product aims to have 2 distinct personalities to distinguish between differe
 
 -something to stand out from the sea of existing research into LLMs
 
+- use Reinforcement Learning --> Have a series of actions and scores... change the score based on user feedback
+
