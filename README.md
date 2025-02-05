@@ -1,10 +1,5 @@
 # ID25-CannyValley
 
-Things to add to this repo!
-- A team photo
-- A list of team members
-- A copy of your manifesto
-
 ## Team Members
 Damien McGeer 
 
@@ -18,3 +13,43 @@ Louis Forster
 
 ## What is an interactive companion?
 An interactive companion is a device which fosters a two-way relationship between itself and the user while supporting the user's needs. It serves an explicit purpose, and requires little effort for the user to insert into their everyday life. Interacting with an interactive companion should be intrinsically motivating. 
+
+## Abstract
+With a consistent increase in the time spent online, young people have become increasingly withdrawn and isolated. With a series of social skills denied from them as a result of the prolonged pandemic, we have seen a rise in emotional dysregulation. In this paper, we present a new product concept, by which we attempt to provide a solution to these prominent psychological problems. Mimir is an electronic desktop companion, who aims to prepare young people for developing these new skills in the comfort of your own home. [[add results here]]
+
+## What is Mimir?
+Mimir is a desktop companion who aims to help their users reach a desired emotion in the short term. Prototype sketches can be found in the sketches folder.
+
+## Target Demographic 
+
+Age: 17-27 year olds
+
+Gender: Any
+
+Psychographics: 
+ - Tech-hobbiest 
+ - Want to go out or focus
+ - Wants to balance work vs fun
+
+Goals / Challenges:
+ - Has trouble being mentally ready to go out
+ - Has trouble being able to calm down or focus
+
+## Existing Products
+
+Digital assistants:
+ - Alexa, Echo, Google Assistant, Cortana Siri
+ - **Key features:** Voice recognition, natural language processing, interactive guidance, context awareness, task automation, proactive assistance and suggestions
+ - *"Technology assigned to assist users by answering questions and processing simple tasks"*
+
+## Interaction Types
+
+Conversational exchanges 
+
+Heart Rate monitor
+
+Galvanic Skin sensor (skin moisture)
+
+## Personas
+
+The product aims to have 2 distinct personalities to distinguish between different levels of desired emotion.
