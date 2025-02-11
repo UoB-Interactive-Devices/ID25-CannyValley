@@ -1,4 +1,4 @@
-##Mimir User Guide (Interactive Companion) 
+## Mimir User Guide (Interactive Companion) 
 
 Mimir is a device that can be place in one’s room. It is small enough to fit on a desk, bedside table or a shelf.  
 
@@ -10,7 +10,7 @@ From there, it is permanently on and in standby until the user begins the intera
 
  
 
-###Read my mood  
+### Read my mood  
 
 Uses biological functions to figure out how the user is feeling. This is done via checking the person’s heartrate and skin moisture level. The user does it by holding Mimir and placing their fingers on the grips that use PPG sensor for the heart rate and galvanic skin sensors for skin moisture to read this information and estimate the user’s mood.  
 
@@ -18,7 +18,7 @@ After calculating what Mimir thinks the emotion level of the user is, it will an
 
  
 
-###Change my mood  
+### Change my mood  
 
 Requires the RMM feature and the user certain the level of arousal they want. Then the device will try and help the user so that they move away from their current emotional level to their desired level. 
 
@@ -26,7 +26,7 @@ Mimir will inform the user that to end the interaction they will need to press a
 
 Currently, the desired level of emotion ranges from calm to hype and there are multiple levels between the extremes of the two. Different interaction will take place depending on the difference between the current and desired level and how intense the desired level is. 
 
-*Calm* 
+**Calm**
 
 When the target level is calm, the CMM will:  
 
@@ -46,7 +46,7 @@ This is led by the “calm persona”. The inspiration for this persona is Maste
 
  
 
-*Hype* 
+**Hype**
 
 When the target level is hype, the CMM will:  
 
@@ -62,7 +62,7 @@ This is led by the “hype persona”. The inspiration for this persona is Shia 
 
  
 
-###Levels 
+### Levels 
 
 The emotional levels will range from calm (-3) to hype (3). The RMM will be able to evaluate the mood to be a 0 but the user isn’t able to choose 0 as the mood they want to be at. 
 
