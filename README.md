@@ -23,7 +23,7 @@ Mimir is a small, cylindrical companion that aims to help the user with an immed
 
 ## Target Demographic 
 
-Age: 17-27 year olds
+Age: 18-27 year olds
 
 Gender: Any
 
