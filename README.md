@@ -80,3 +80,5 @@ The product aims to have 2 distinct personalities to distinguish between differe
 
 - use Reinforcement Learning --> Have a series of actions and scores... change the score based on user feedback
 
+![Untitled](https://github.com/user-attachments/assets/bb1f7aac-d28b-4116-a13d-188796a7382e)
+
