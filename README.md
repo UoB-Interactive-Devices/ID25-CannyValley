@@ -19,7 +19,7 @@ An interactive companion is a device which fosters a two-way relationship betwee
 With a consistent increase in the time spent online, young people have become increasingly withdrawn and isolated. With a series of social skills denied from them as a result of the prolonged pandemic, we have seen a rise in emotional dysregulation. In this paper, we present a new product concept, by which we attempt to provide a solution to these prominent psychological problems. Mimir is an electronic desktop companion, who aims to prepare young people for developing these new skills in the comfort of your own home. [[add results here]]
 
 ## What is Mimir?
-Mimir is a desktop companion who aims to help their users reach a desired emotion in the short term. Prototype sketches can be found in the sketches folder.
+Mimir is a small, cylindrical companion that aims to help the user with an immediate mood change ranging from calm to excited. Based off the user’s currently mood (as estimated by multiple sensors) and where they aim to be, it prompts the user in activities to help them reach their desired emotional level. 
 
 ## Target Demographic 
 
