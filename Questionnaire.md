@@ -1,6 +1,6 @@
 The defined scale of emotions stems from the Arousal-Valence models, with specific focus on the arousal due to the nature of our product. 
 
-<img src="./arousalModel.png" width=100>
+<img src="./arousalModel.png">
 
 Each adjective acts as a contruct for which the questionnaire is focused on. The constructs are restricted to positive adjective to avoid asking the user questions such as "How depressed are you feeling?", as this may have adverse effects on the users current mood.
 
