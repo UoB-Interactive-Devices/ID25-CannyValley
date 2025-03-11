@@ -1,3 +1,4 @@
+import os
 import random, time, pyttsx3
 import speech_recognition as sr
 import pyaudio
@@ -128,8 +129,8 @@ def playmusic(number):
     message = "Playing music"
     print(message)
     speak_text(message)
-
-    music_file = "./music/song.mp3"
+    files = [ "energise.mp3", "calm.mp3",  "focus.mp3", "happy.mp3"]
+    music_file = os.path.join(os.path.dirname(__file__), "music", files[number])
     if pygame.mixer.music.get_busy():
         pygame.mixer.music.stop()
 
