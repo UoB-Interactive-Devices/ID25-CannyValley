@@ -77,12 +77,12 @@ def writeDefault():
 #this is arbitrary i just made it up for a thing
 def populateChoices(number):
     if(number==0):
-        return [1,1,11,12]
+        return [1,1,11,8]
     elif number==1:
         return [1,2,3,5,6,7]
     elif number==2:
-        return [9,2,1]
+        return [9,1,2,12]
     elif number==3:
-        return [1,10,3,4]
+        return [1,10,4]
     else:
         return [1,2,3,4]
