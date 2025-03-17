@@ -293,7 +293,7 @@ def findanaffirmation(number):
     randomaff = random.randint(0, len(myaffirmations) - 1)
     number1 = myaffirmations[randomaff][0][0]
     number2 = myaffirmations[randomaff][0][1]
-    if number == number2 or number == number2:
+    if number == number1 or number == number2:
         return (myaffirmations[randomaff][1])
     else:
         foundaff = findanaffirmation(number)
@@ -492,46 +492,102 @@ def drinkWater():
 
 
 def guideStretch():
-    message = "Let's do some stretches. Raise your arms above your head and take a deep breath."
+    message = "Let's release some tension. For each position, we’ll hold for 8, but I’ll give you a bit of extra time to get into position."
     print(message)
     speak_text(message)
     time.sleep(3)
 
-    message = "Now lower your arms and roll your shoulders backward three times."
+    message = "So, first, sit down cross-legged and raise your arms straight above your head and hold."
     print(message)
     speak_text(message)
-    time.sleep(3)
+    time.sleep(15)
 
-    message = "Finally, gently tilt your head side to side, holding each stretch for 3 seconds."
+    message = "Now move so you are lying on your front and push your top half up of the floor with your arms, trying to keep your legs flat against the floor. See if you can point your toes and curve your back and head back"
     print(message)
     speak_text(message)
+    time.sleep(12)
 
+    message = "And relax. Now place your hands in front of you and make sure your feet are firmly on the ground. Push up to create an upside-down V shape. This is the downwards dog."
+    print(message)
+    speak_text(message)
+    time.sleep(11)
+
+    message="Stand up and recentre yourself. Give a little shake to any muscles you feel like you used."
+    print(message)
+    speak_text(message)
+    time.sleep(5)
+
+def counttoFour():
+    message = "One"
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "Two"
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "Three"
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "Four."
+    print(message)
+    speak_text(message)
 
 def guideMeditation():
-    message = "Let's take a moment to meditate. Close your eyes and focus on your breathing."
+    mediLoop=0
+    while mediLoop<3:
+        message = "Let’s take a moment to reset. Follow my guidance as we breathe together."
+        print(message)
+        speak_text(message)
+        time.sleep(3)
+
+        message = "Breathe in slowly through your nose."
+        print(message)
+        speak_text(message)
+        time.sleep(1)
+        counttoFour()
+        time.sleep(0.5)
+
+        message = "Now hold your breath."
+        print(message)
+        speak_text(message)
+        time.sleep(1)
+        counttoFour()
+        time.sleep(0.5)
+
+        message = "Gently breathe out through your mouth."
+        print(message)
+        speak_text(message)
+        time.sleep(1)
+        counttoFour()
+        time.sleep(0.5)
+
+        message = "Gently breathe out through your mouth."
+        print(message)
+        speak_text(message)
+        time.sleep(1)
+        counttoFour()
+        time.sleep(0.5)
+
+        mediLoop+=1
+
+    message = "Take one final slow breath in and out. Notice how your body feels. You are calm, steady, and in control."
     print(message)
     speak_text(message)
-    time.sleep(3)
 
-    message = "Breathe in slowly through your nose, and out through your mouth."
-    print(message)
-    speak_text(message)
-    time.sleep(5)
+locations = ["Africa"," a zoo","your house","a park"]
+numbers = [1,2,3,4,5,6,7,8,9,10,11,12]
+colours = ["red","blue","pink","green","yellow","orange","white","black","purple"]
+letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
 
-    message = "Notice any thoughts that come up, and gently let them go."
-    print(message)
-    speak_text(message)
-    time.sleep(5)
-
-    message = "Continue breathing deeply for a few more moments."
-    print(message)
-    speak_text(message)
-    time.sleep(5)
-
-    message = "When you're ready, slowly open your eyes."
-    print(message)
-    speak_text(message)
-
+def formSequence():
+    sequencelist=[]
+    loop=random.randint(5,7)
+    iterate=1
+    while iterate<loop:
+        sequencelist.append(colours[random.randint(0,len(colours)-1)])
+    return sequencelist
 
 def playGame(number):
     if (number == 0):
@@ -540,10 +596,37 @@ def playGame(number):
         speak_text(message)
         voice_input()
     elif (number == 1):
-        message = "Let's play a focus game. Count backward from 20 to 10 in your head, then say 'done'."
+        message = "I’ve got a quick game for you. Are you ready for a challenge?"
         print(message)
         speak_text(message)
         voice_input()
+        time.sleep(1)
+        number=random.randint(len(locations)-1)
+        message = ("An easy one to start: name three animals you would find in"+locations[number])
+        print(message)
+        speak_text(message)
+        voice_input()
+        message = ("Okay, maybe some maths next? What is "+str(numbers[random.randint(0,11)])+" times "+str(numbers[random.randint(0,11)])+"?")
+        print(message)
+        speak_text(message)
+        voice_input()
+        message = ("Cool, now can you name something that is ",colours[random.randint(0,len(colours)-1)])
+        print(message)
+        speak_text(message)
+        voice_input()
+        message = ("Nice. Now can you name somewhere beginning with "+letters[random.randint(0,len(letters)-1)])
+        print(message)
+        speak_text(message)
+        voice_input()
+        sequence = formSequence()
+        message = ("Finally, can you remember this sequence: "+sequence)
+        print(message)
+        speak_text(message)
+        voice_input()
+        message="Well done, you did great! "
+        print(message)
+        speak_text(message)
+        
 
 
 def setGoal():
@@ -586,6 +669,60 @@ def listGratitude():
     print(message)
     speak_text(message)
 
+def distractionCheck():
+    message = "Let us make sure you can stay on track."
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "Place your phone on do not disturb and make sure it is out of reach"
+    print(message)
+    speak_text(message)
+    time.sleep(5)
+    message = "Clear your working area. Remove any unnecessary paper or other distractions"
+    print(message)
+    speak_text(message)
+    time.sleep(10)
+    message = "If you are using a laptop, close those extra tabs and make sure your games or other distractions aren’t open"
+    print(message)
+    speak_text(message)
+    time.sleep(5)
+    message = "Take a second just to breath."
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "OK, let's begin!"
+    print(message)
+    speak_text(message)
+
+def physicalRoutine():
+    message = "Are you ready to get that blood pumping?"
+    print(message)
+    speak_text(message)
+    time.sleep(1)
+    message = "Give me 5 jumping jacks first"
+    print(message)
+    speak_text(message)
+    time.sleep(7)
+    message = "Awesome. Now run on the spot until I say stop!"
+    print(message)
+    speak_text(message)
+    time.sleep(10)
+    message = "STOP! Well done, bit slower now so give me 5 squats."
+    print(message)
+    speak_text(message)
+    time.sleep(12)
+    message = "Now, a bit more running but get those knees as high as you can!"
+    print(message)
+    speak_text(message)
+    time.sleep(10)
+    message = "Great! Give me a bit of shadow boxing, just to finish"
+    print(message)
+    speak_text(message)
+    time.sleep(10)
+    message = "Don't you feel that blood pumping?"
+    print(message)
+    speak_text(message)
+
 
 def cmm(aiChoices, goalmood):
     aiDecision = random.choice(aiChoices)
@@ -609,6 +746,12 @@ def cmm(aiChoices, goalmood):
         setGoal()
     elif aiDecision == 10:
         listGratitude()
+    elif aiDecision == 11:
+        physicalRoutine()
+    elif aiDecision == 12:
+        distractionCheck()
+    
+
 
 
 def takeUserFeedback(currentlist):
