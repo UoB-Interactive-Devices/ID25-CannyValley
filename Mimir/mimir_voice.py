@@ -5,7 +5,8 @@ import pyaudio
 from openai import OpenAI
 import pygame
 import threading
-
+import sys
+import datetime
 
 client = OpenAI(
     api_key= "OPENAI-KEY",
@@ -953,9 +954,20 @@ Would you like to:
 
 
 if __name__ == "__main__":
+
+    # logging console output to a file
+    # comment this out for prints in the console
+    
+    # os.makedirs("logs", exist_ok=True)
+    # log_file_path = os.path.join("logs", f"console_log_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.txt")
+    # sys.stdout = open(log_file_path, 'a')
+    # print(f"Logging console output to: {log_file_path}")
+
     numbergoup = 0
     navigate()
     message = "Goodbye!"
     print(message)
     speak_text(message)
     p.terminate()
+
+    
