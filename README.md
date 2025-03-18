@@ -47,9 +47,11 @@ Digital assistants:
 Audio:
  - Listen and Talks
  - Plays Music
+   
 Visual:
  - E-ink Screen
  - LED Lights
+
 Physical:
  - Turn the Dial
  - Push the button
