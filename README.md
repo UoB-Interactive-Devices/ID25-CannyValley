@@ -44,12 +44,17 @@ Digital assistants:
  - *"Technology assigned to assist users by answering questions and processing simple tasks"*
 
 ## Interaction Types
+Audio:
+ - Listen and Talks
+ - Plays Music
+Visual:
+ - E-ink Screen
+ - LED Lights
+Physical:
+ - Turn the Dial
+ - Push the button
+ - Heart Rate monitor
 
-Conversational exchanges 
-
-Heart Rate monitor
-
-Galvanic Skin sensor (skin moisture)
 
 ## Personas
 
