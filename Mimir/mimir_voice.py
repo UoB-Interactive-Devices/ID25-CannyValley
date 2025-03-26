@@ -138,6 +138,7 @@ def playmusic(number):
 
     try:
         pygame.mixer.music.load(music_file)
+        displayImage('MusicNote3.bmp')
         pygame.mixer.music.play()
         print(f"Now playing: {music_file}")
         print("Say 'stop' to end music playback")
@@ -151,6 +152,7 @@ def playmusic(number):
         print(f"Error playing music: {e}")
 
 def dosensors():
+    displayImage('Heart2.bmp')
     #x=heartratemon.hr()
     x=0
     return x
@@ -176,9 +178,11 @@ def deepBreaths():
         for i in range(3):
             time.sleep(1)
             message = "Breathe in"
+            displayImage('Breath1.bmp')
             print(message)
             speak_text(message)
             time.sleep(1)
+            
 
             message = "Hold it"
             print(message)
@@ -186,8 +190,10 @@ def deepBreaths():
             time.sleep(1)
 
             message = "And breathe out"
+            displayImage('Breath2.bmp')
             print(message)
             speak_text(message)
+            time.sleep(1)
     elif contains_keywords(response, no_responses):
         message = "OK, we'll do something else."
         print(message)
@@ -199,93 +205,33 @@ def deepBreaths():
         deepBreaths()
 
 
-hypeenvironments = [[["Club"], ["popping"], ["lights", "DJ"], ["goes hard"]]]
-
-calmenvironments = [
-    [["Rainforest"], ["lush", "verdant", "vibrant", "glimmering"], ["river", "trees", "canopy", "forest floor", "sun"],
-     ["flickers", "emanates", "shines", "flows"]]]
-sentences = [["the", "2", "is", "1"], ["Watch as the", "2", "3", "across the", "0"],
-             ["Imagine the", "1", "2", "as it", "3"]]
-
+descriptions = ["You are standing in a lovely grassy field; the wind is blowing softly, and the sun is warm on your skin. To your left you can hear birds chirping to each other. It seems like the perfect place for your delicious picnic. I wonder which of your favourite foods you have brought. ","In front of you is a beautiful blue sky surrounding a stunning mountain topped with snow. The fir trees stand ever tall, and evergreen and birds are chirping as they hop from tree to tree. The mountain touches the top of the sky where clouds and snow blur together. ","The sun is blinding as it bounces of the calm ocean. The sand is warm beneath your feet and the waves just about reaches your toes. The coolness of the ocean perfectly balanced against the warmth of the sun. The waves create such a relaxing noise as they splash against the beach. ","The dark sky is dotted with tons of stars shining brightly. When you look close enough, you can see swirls of deep blues and amazing purples swirling together in the milky way. The blanket wrapped around you is so soft and fluffy. Its doing a great job of keeping you warm but of course your favourite hot drink is helping as well. ","Deep blues blend into greens, greens blend into yellows, yellows blend into pinks, pinks blend into oranges, oranges blend into reds. The sunset is stunning, painting the sky is amazing colours as the sun lowers behind a hill, now a stark black in front of the colourful sky.  "]
 
 def factoryReset():
     defaultaiChoices.writeDefault()
 
 
 def describeEnvironment(number):
-    if (number == 0 or number == 3):
-        prompt = "I'm going to create a space for you to get into it now, if that's alright?"
-        theinput = voice_input(prompt).lower()
-
-        if contains_keywords(theinput, yes_responses):
-            thisenv = random.randint(0, 2)
-            thisenv = 0
-            placename = str(hypeenvironments[thisenv][0])
-            message = f"Welcome to the {placename}"
-            print(message)
-            speak_text(message)
-            time.sleep(1)
-
-            thesetimes = random.randint(4, 6)
-            for i in range(thesetimes):
-                whichsentence = random.randint(0, 2)
-                sentence = ""
-                for fragment in sentences[whichsentence]:
-                    if fragment.isdigit():
-                        value = int(fragment)
-                        whichone = random.randint(0, len(hypeenvironments[thisenv][value]) - 1)
-                        sentence += hypeenvironments[thisenv][value][whichone] + " "
-                    else:
-                        sentence += fragment + " "
-                print(sentence)
-                speak_text(sentence)
-                time.sleep(1)
-        elif contains_keywords(theinput, yes_responses):
-            message = "OK, we'll do something else."
-            print(message)
-            speak_text(message)
-        else:
-            message = "I didn't quite get that. Try again?"
-            print(message)
-            speak_text(message)
-            describeEnvironment(number)
-    elif (number == 1 or number == 2):
-        prompt = "I'm going to create a space for you to reflect now, if that's alright?"
-        theinput = voice_input(prompt).lower()
-
-        if contains_keywords(theinput, yes_responses):
-            thisenv = random.randint(0, 2)
-            thisenv = 0
-            placename = str(calmenvironments[thisenv][0])
-            message = f"Welcome to the {placename}"
-            print(message)
-            speak_text(message)
-            time.sleep(1)
-
-            thesetimes = random.randint(4, 6)
-            for i in range(thesetimes):
-                whichsentence = random.randint(0, 2)
-                sentence = ""
-                for fragment in sentences[whichsentence]:
-                    if fragment.isdigit():
-                        value = int(fragment)
-                        whichone = random.randint(0, len(calmenvironments[thisenv][value]) - 1)
-                        sentence += calmenvironments[thisenv][value][whichone] + " "
-                    else:
-                        sentence += fragment + " "
-                print(sentence)
-                speak_text(sentence)
-                time.sleep(1)
-        elif contains_keywords(theinput, no_responses):
-            message = "OK, we'll do something else."
-            print(message)
-            speak_text(message)
-        else:
-            message = "I didn't quite get that. Try again?"
-            print(message)
-            speak_text(message)
-            describeEnvironment(number)
-
+    prompt = "Let's do a few mental exercises"
+    speak_text(prompt)
+    prompt1 = "Something simple to begin: Think of a cute animal. Maybe a little bunny or a kitten curled up next to a fire."
+    speak_text(prompt1)
+    displayImage('Bunny1.bmp')
+    time.sleep(3)
+    displayImage('Cat1.bmp')
+    time.sleep(3)
+    displayImage('Dog1.bmp')
+    prompt2 = "Give yourself a little smile."
+    speak_text(prompt2)
+    time.sleep(5)
+    number=random.randint(len(descriptions)-1)
+    prompt3 = "Close your eyes and imagine what I’m describing:"
+    displayImage('Hills1.bmp')
+    speak_text(prompt3)
+    displayImage('Mountain1.bmp')
+    speak_text(descriptions[number])
+    time.sleep(5)
+    
 
 myaffirmations = [[[0, 3], "Today is my day!"], [[2, 1], "I am enough"], [[1, 2], "I am loved"],
                   [[2, 1], "Through positive thought, I transform obstacles into stepping stones"],
@@ -304,6 +250,7 @@ def findanaffirmation(number):
 
 
 def saytheaffirmation(theaff, times):
+    displayImage('Smile2.bmp')
     if times < 3:
         print(f"{theaff} ")
         speak_text(theaff)
@@ -325,6 +272,7 @@ def saytheaffirmation(theaff, times):
 def positiveAffirmations(number):
     if (number == 3):
         prompt = "Let's get hyped! You good to chant back to me?"
+        displayImage('Cheer1.bmp')
         theinput = voice_input(prompt).lower()
 
         if contains_keywords(theinput, yes_responses):
@@ -341,6 +289,7 @@ def positiveAffirmations(number):
             positiveAffirmations(number)
     elif (number == 2):
         prompt = "Let's get into it, time to shout back after me"
+        displayImage('Cheer2.bmp')
         theinput = voice_input(prompt).lower()
 
         if contains_keywords(theinput.lower(), yes_responses):
@@ -356,6 +305,7 @@ def positiveAffirmations(number):
             speak_text(message)
             positiveAffirmations(number)
     elif (number <= 1):
+        displayImage('Cheer1.bmp')
         prompt = "Alright, let's repeat after me"
         theinput = voice_input(prompt).lower()
 
@@ -459,7 +409,22 @@ def dialinput():
                 dial=int(line)
     return(dial)
 
+picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))),'bitmaps')
+libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))),'lib')
+if os.path.exists(libdir):
+    sys.path.append(libdir)
+                      
+
+
 def displayImage(image):
+    epd = epd2in13d.EPD()
+    epd.init()
+    epd.Clear()
+    Himage = Image.new('1', (epd.height, epd.width), 255)
+    draw = ImageDraw.Draw(Himage)
+    time.sleep(2)
+    Himage = Image.open(os.path.join(picdir,image))
+    epd.display(epd.getbuffer(Himage))
     
 
 def rmm():
@@ -472,10 +437,11 @@ def rmm():
     else:
         userfeeling = 1
     feel= round((userfeeling+dial)/2)
-
+    displayImage('QuestionMark1.bmp')
     qR = 0
     while qR == 0:
         prompt = "Would you say you're feeling more positive or negative right now?"
+        displayImage('QuestionMark2.bmp')
         q = voice_input(prompt)
 
         if q.lower() == "positive":
@@ -491,6 +457,7 @@ def rmm():
 
 
 def drinkWater():
+    displayImage('WaterDroplet2.bmp')
     prompt = "Have you drunk water in the past hour?"
     drinkcheck = voice_input(prompt).lower()
 
@@ -517,21 +484,25 @@ def guideStretch():
     message = "Let's release some tension. For each position, we’ll hold for 8, but I’ll give you a bit of extra time to get into position."
     print(message)
     speak_text(message)
+    displayImage('Yoga1.bmp')
     time.sleep(3)
 
     message = "So, first, sit down cross-legged and raise your arms straight above your head and hold."
     print(message)
     speak_text(message)
+    displayImage('Yoga2.bmp')
     time.sleep(15)
 
     message = "Now move so you are lying on your front and push your top half up of the floor with your arms, trying to keep your legs flat against the floor. See if you can point your toes and curve your back and head back"
     print(message)
     speak_text(message)
+    displayImage('Yoga1.bmp')
     time.sleep(12)
 
     message = "And relax. Now place your hands in front of you and make sure your feet are firmly on the ground. Push up to create an upside-down V shape. This is the downwards dog."
     print(message)
     speak_text(message)
+    displayImage('Yoga2.bmp')
     time.sleep(11)
 
     message="Stand up and recentre yourself. Give a little shake to any muscles you feel like you used."
@@ -565,6 +536,7 @@ def guideMeditation():
         time.sleep(3)
 
         message = "Breathe in slowly through your nose."
+        displayImage('Breath1.bmp')
         print(message)
         speak_text(message)
         time.sleep(1)
@@ -584,13 +556,7 @@ def guideMeditation():
         time.sleep(1)
         counttoFour()
         time.sleep(0.5)
-
-        message = "Gently breathe out through your mouth."
-        print(message)
-        speak_text(message)
-        time.sleep(1)
-        counttoFour()
-        time.sleep(0.5)
+        displayImage('Breath2.bmp')
 
         mediLoop+=1
 
@@ -654,6 +620,7 @@ def playGame(number):
 def setGoal():
     prompt = "Let's set a goal! What can you get done in the next 5 minutes?"
     goaltoset = voice_input(prompt)
+    displayImage('Clock1.bmp')
 
     message = "Sounds good! I'll see you then!"
     print(message)
@@ -663,7 +630,7 @@ def setGoal():
 
     prompt = "Did you get it done?"
     complete = voice_input(prompt).lower()
-
+    displayImage('Clock2.bmp')
     if contains_keywords(complete, yes_responses):
         message = "Amazing. Super productive."
         print(message)
@@ -676,10 +643,12 @@ def setGoal():
 
 def listGratitude():
     prompt = "OK, now it's time to talk gratitude. What's something you're grateful for today?"
+    displayImage('Sun3.bmp')
     thing1 = voice_input(prompt)
     time.sleep(1)
 
     prompt = "And something else?"
+    displayImage('Thought1.bmp')
     thing2 = voice_input(prompt)
     time.sleep(1)
 
@@ -688,6 +657,7 @@ def listGratitude():
     time.sleep(1)
 
     message = "That sounds great!"
+    displayImage('Sunset.bmp')
     print(message)
     speak_text(message)
 
@@ -701,6 +671,7 @@ def distractionCheck():
     speak_text(message)
     time.sleep(5)
     message = "Clear your working area. Remove any unnecessary paper or other distractions"
+    displayImage('Thought2.bmp')
     print(message)
     speak_text(message)
     time.sleep(10)
@@ -709,6 +680,7 @@ def distractionCheck():
     speak_text(message)
     time.sleep(5)
     message = "Take a second just to breath."
+    displayImage('Breath1.bmp')
     print(message)
     speak_text(message)
     time.sleep(1)
@@ -722,12 +694,14 @@ def physicalRoutine():
     speak_text(message)
     time.sleep(1)
     message = "Give me 5 jumping jacks first"
+    displayImage('Exercise1.bmp')
     print(message)
     speak_text(message)
     time.sleep(7)
     message = "Awesome. Now run on the spot until I say stop!"
     print(message)
     speak_text(message)
+    displayImage('Exercise2.bmp')
     time.sleep(10)
     message = "STOP! Well done, bit slower now so give me 5 squats."
     print(message)
@@ -736,6 +710,7 @@ def physicalRoutine():
     message = "Now, a bit more running but get those knees as high as you can!"
     print(message)
     speak_text(message)
+    displayImage('Exercise1.bmp')
     time.sleep(10)
     message = "Great! Give me a bit of shadow boxing, just to finish"
     print(message)
@@ -744,6 +719,7 @@ def physicalRoutine():
     message = "Don't you feel that blood pumping?"
     print(message)
     speak_text(message)
+    displayImage('Smile3.bmp')
 
 
 def cmm(aiChoices, goalmood):
@@ -773,6 +749,8 @@ def cmm(aiChoices, goalmood):
     elif aiDecision == 12:
         distractionCheck()
     
+
+
 
 
 
@@ -818,6 +796,7 @@ def takeUserFeedback(currentlist):
 
 
 def checkFeedback(currentlist, numbergoup):
+    displayImage('Speak1.bmp')
     numbergoup += 1
     if numbergoup % 5 == 0:
         prompt = "Have you had enough of this mode?"
@@ -841,6 +820,7 @@ def checkFeedback(currentlist, numbergoup):
 
 
 def energyenhance():
+    displayImage('Smile1.bmp')
     lightsUp()
     numbergoup = 0
 
@@ -864,6 +844,7 @@ def energyenhance():
 
 
 def deeprelax():
+    displayImage('Smile2.bmp')
     lightsDown()
     numbergoup = 0
 
@@ -887,6 +868,7 @@ def deeprelax():
 
 
 def focus():
+    displayImage('Smile3.bmp')
     lightsDown()
     numbergoup = 0
 
@@ -910,6 +892,7 @@ def focus():
 
 
 def happinessboost():
+    displayImage('Smile4.bmp')
     lightsUp()
     numbergoup = 0
 
@@ -936,6 +919,7 @@ def navigate():
     noreply = True
 
     while noreply:
+        displayImage('Smile1.bmp')
         message = """Hello, this is Mimir.
 Would you like to:
 1. Find Your Mood
