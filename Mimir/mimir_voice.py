@@ -8,6 +8,7 @@ import threading
 import sys
 import datetime
 import serial
+from heartrate_monitor import HeartRateMonitor
 
 client = OpenAI(
     api_key= "OPENAI-KEY",
@@ -151,10 +152,19 @@ def playmusic(number):
     except Exception as e:
         print(f"Error playing music: {e}")
 
+def startheartrate():
+    duration = 15
+    hrm = HeartRateMonitor(print_raw=False, print_result=True)
+    hrm.start_sensor()
+    try:
+        time.sleep(duration)
+    except KeyboardInterrupt:
+        print('keyboard interrupt detected, exiting...')
+    hrm.stop_sensor()
+
 def dosensors():
     displayImage('Heart2.bmp')
-    #x=heartratemon.hr()
-    x=0
+    x=startheartrate
     return x
 
 
