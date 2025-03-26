@@ -5,6 +5,7 @@ import threading
 import time
 import numpy as np
 
+averagebpm=0
 
 class HeartRateMonitor(object):
     """
@@ -60,18 +61,22 @@ class HeartRateMonitor(object):
                         if self.print_result:
                             #print("{0}, SpO2: {1}".format(self.bpm, spo2))
                             #THIS IS WHERE WE GET THE RESULTS FROM
-                            listofbpm.append(self.bpm)
-                            listofo2.append(spo2)
+                            if(self.bpm<=200):
+                                listofbpm.append(self.bpm)
+                                listofo2.append(spo2)
             time.sleep(self.LOOP_TIME)
+        global averagebpm 
         averagebpm = sum(listofbpm)/len(listofbpm)
         print(averagebpm)
         sensor.shutdown()
-        #return(averagebpm)
+
 
     def start_sensor(self):
         self._thread = threading.Thread(target=self.run_sensor)
         self._thread.stopped = False
         self._thread.start()
+        return(averagebpm)
+
 
     def stop_sensor(self, timeout=2.0):
         self._thread.stopped = True
