@@ -150,7 +150,8 @@ def playmusic(number):
         print(f"Error playing music: {e}")
 
 def dosensors():
-    x = 0
+    #x=heartratemon.hr()
+    x=0
     return x
 
 
@@ -413,17 +414,17 @@ def physicalquestions(hr, posneg):
     q1R = 0
     q2R = 0
     value = 0
-    if (hr == "high" and posneg == 1):
+    if (hr == 3 and posneg == 1):
         value = 0
-    elif (hr == "normal" and posneg == 1):
+    elif (hr == 2 and posneg == 1):
         value = 1
-    elif (hr == "low" and posneg == 1):
+    elif (hr == 1 and posneg == 1):
         value = 2
-    elif (hr == "high" and posneg == 0):
+    elif (hr == 3 and posneg == 0):
         value = 3
-    elif (hr == "normal" and posneg == 0):
+    elif (hr == 2 and posneg == 0):
         value = 4
-    elif (hr == "low" and posneg == 0):
+    elif (hr == 1 and posneg == 0):
         value = 5
 
     indexlist = list(range(len(questionbank[value])))
@@ -442,15 +443,23 @@ def physicalquestions(hr, posneg):
         q1 = voice_input()
         time.sleep(3)
 
+def dialinput():
+    prompt = "Turn the dial to indicate your mood"
+    speak_text(prompt)
+    #do the dial thing on arduino, serial comms etc
+    dial = 3 #2,1
+    return(dial)
 
 def rmm():
     heartrate = dosensors()
-    if (heartrate > 50):
-        userfeeling = "high"
+    dial = dialinput()
+    if (heartrate > 50): #arbitrary numbers
+        userfeeling = 3
     elif (heartrate <= 20):
-        userfeeling = "normal"
+        userfeeling = 2
     else:
-        userfeeling = "low"
+        userfeeling = 1
+    feel= round((userfeeling+dial)/2)
 
     qR = 0
     while qR == 0:
@@ -466,7 +475,7 @@ def rmm():
             print(message)
             speak_text(message)
 
-    physicalquestions(userfeeling, qR)
+    physicalquestions(feel, qR)
 
 
 def drinkWater():
