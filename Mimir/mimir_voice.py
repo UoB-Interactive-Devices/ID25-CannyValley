@@ -7,6 +7,7 @@ import pygame
 import threading
 import sys
 import datetime
+import serial
 
 client = OpenAI(
     api_key= "OPENAI-KEY",
@@ -444,11 +445,21 @@ def physicalquestions(hr, posneg):
         time.sleep(3)
 
 def dialinput():
-    prompt = "Turn the dial to indicate your mood"
+    prompt = "Turn the dial to indicate your goal"
     speak_text(prompt)
-    #do the dial thing on arduino, serial comms etc
-    dial = 3 #2,1
+    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+    ser.reset_input_buffer()
+    keepgo=True
+    while keepgo:
+        if ser.in_waiting > 0:
+            line = ser.readline().decode('utf-8').rstrip()
+            if line != "":
+                keepgo=False
+                dial=int(line)
     return(dial)
+
+def displayImage(image):
+    
 
 def rmm():
     heartrate = dosensors()
@@ -935,24 +946,25 @@ Would you like to:
         print(message)
         speak_text(message)
 
-        navigation = voice_input()
+        navigation = dialinput()
+        #navigation = voice_input()
 
-        if navigation == "1" or "find" in navigation.lower() or "mood" in navigation.lower():
+        if navigation == 1:# or "1" or "find" in navigation.lower() or "mood" in navigation.lower():
             rmm()
             noreply = False
-        elif navigation == "2" or "energy" in navigation.lower() or "enhance" in navigation.lower():
+        elif navigation == 2:# or "2" or "energy" in navigation.lower() or "enhance" in navigation.lower():
             finish = energyenhance()
             if finish == "finish":
                 noreply = False
-        elif navigation == "3" or "deep" in navigation.lower() or "relax" in navigation.lower():
+        elif navigation == 3:# or "3" or "deep" in navigation.lower() or "relax" in navigation.lower():
             finish = deeprelax()
             if finish == "finish":
                 noreply = False
-        elif navigation == "4" or "focus" in navigation.lower():
+        elif navigation == 4:# or "4" or "focus" in navigation.lower():
             finish = focus()
             if finish == "finish":
                 noreply = False
-        elif navigation == "5" or "happiness" in navigation.lower() or "boost" in navigation.lower():
+        elif navigation == 5:# or "5" or "happiness" in navigation.lower() or "boost" in navigation.lower():
             finish = happinessboost()
             if finish == "finish":
                 noreply = False
