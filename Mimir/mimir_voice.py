@@ -449,6 +449,7 @@ def dialinput():
     speak_text(prompt)
     ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
     ser.reset_input_buffer()
+    #write to arduino -- start dial function
     keepgo=True
     while keepgo:
         if ser.in_waiting > 0:
