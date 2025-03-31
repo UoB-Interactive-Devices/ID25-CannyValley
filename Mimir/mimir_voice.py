@@ -438,14 +438,12 @@ def displayImage(image):
 
 def rmm():
     heartrate = dosensors()
-    dial = dialinput()
     if (heartrate > 50): #arbitrary numbers
-        userfeeling = 3
+        feel = 3
     elif (heartrate <= 20):
-        userfeeling = 2
+        feel = 2
     else:
-        userfeeling = 1
-    feel= round((userfeeling+dial)/2)
+        feel = 1
     displayImage('QuestionMark1.bmp')
     qR = 0
     while qR == 0:
