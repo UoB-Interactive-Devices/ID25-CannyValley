@@ -51,7 +51,6 @@ def get_voice_input():
         print("Error during transcription:", e)
         return None
 
-
 def speak_text(text):
 
     stream = None
